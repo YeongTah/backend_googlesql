@@ -1,9 +1,9 @@
 const db = require('./db'); // Import the database connection from db.js
 
 // Function to query the database and return a Promise
-function getHardwareData() {
+module.exports.getResolutionData = function getResolutionData() {
   return new Promise((resolve, reject) => {
-    db.query('SELECT * FROM hardware', (err, results) => {
+    db.query('SELECT * FROM resolution_table', (err, results) => {
       if (err) {
         console.error('Error executing query:', err.message);
         return reject(err); // Reject the promise if there is an error
@@ -14,4 +14,4 @@ function getHardwareData() {
   });
 }
 
-module.exports = getHardwareData;
+
