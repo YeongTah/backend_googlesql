@@ -30,6 +30,44 @@ app.get('/hardware', async (req, res) => {
   }
 });
 
+app.post('/create-ticket', async (req, res) => {
+  console.log("I'm in the route to create a new ticket at app.js");
+
+  try {
+    // Extract the data from the request body
+    const { category, topic, description } = req.body;
+
+    // Log the received data
+    console.log('Received ticket data:', { category, topic, description });
+
+    // Call the createnewticket function to insert the new ticket into the database
+    const result = await getHardwareData.createnewticket(category, topic, description);
+
+    // Respond back with the new ticket data as a JSON response
+    res.status(201).json({
+      message: "Ticket created successfully",
+      ticket: result // Respond with the result (new ticket data from the database)
+    });
+  } catch (err) {
+    console.error('Error creating ticket:', err);
+    res.status(500).send('Error creating ticket');  // Handle error
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Start the server
 app.listen(port, 'localhost', () => {  // Listen on localhost
     const baseUrl = `http://localhost:${port}`;  // Localhost URL

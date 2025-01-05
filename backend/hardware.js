@@ -14,4 +14,20 @@ module.exports.getResolutionData = function getResolutionData() {
   });
 }
 
-
+module.exports.createnewticket = function createnewticket(category, topic, description ) {
+  return new Promise((resolve, reject) => {
+    const data = [category, topic, description]
+    console.log('this is the data'+ data)
+    db.query(
+      `insert into resolution_table (Topic, Category, Description, Lastupdated) VALUES 
+(?, ?, ? , NOW())`
+, data ,(err, results) => {
+      if (err) {
+        console.error('Error executing query:', err.message);
+        return reject(err); // Reject the promise if there is an error
+      }
+      console.log('Query results:', results);
+      resolve(results); // Resolve the promise with the query results
+    });
+  });
+}

@@ -1,0 +1,149 @@
+/* General Reset */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+@font-face {
+   font-family: 'MyCustomFont'; /* The name you want to use for the font */
+   src: url('/fonts/Rubik/Rubik-VariableFont_wght.ttf') format('truetype');
+   src: url('/fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf') format('truetype');
+   font-weight: normal; /* Optional: Define the font weight */
+   font-style: normal; /* Optional: Define the font style (e.g., italic, normal) */
+}
+
+body {
+    background-color: #eeeeee84  ;
+}
+
+/* Header Styling */
+header {
+   background-color: #ffffff;
+   position: fixed;  /* Make header fixed */
+   top: 0;
+   width: 100%;
+   padding: 15px 0;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the header */
+   z-index: 1000;
+}
+ 
+ 
+ 
+ 
+ .Title {
+    display: flex;  /* Use Flexbox layout */
+    align-items: center;  /* Vertically align items to the center */
+    font-family: 'Rubik', sans-serif;
+ }
+ 
+ .Logo {
+    width: 100px;
+    height: auto;
+    left: 2em;
+ }
+ 
+ .TitleWord {
+    font-size: .6em;          /* Adjust font size */
+    color: rgb(0, 0, 0);               /* Change text color */
+    margin-left: auto;         /* Space between image and text */
+ }
+ 
+ ol {
+    display: flex;             /* Apply Flexbox to the ordered list */
+    flex-direction: row;       /* Ensure the items are arranged horizontally */
+    padding: 0;                /* Remove default padding from ol */
+ }
+ 
+ li {
+    margin-right: 20px;        /* Add some space between items */
+    list-style-type: decimal;  /* Optional: Add the number style back */
+    font-size: 1.2em;          /* Optional: Adjust font size */
+    list-style-type: none;
+ }
+ 
+ 
+ #mainbodydiv {
+    width: 80%;  
+    margin: 0 auto; 
+    padding-top: 10em;
+ }
+ 
+
+ #mainbodydivheader {
+    font-weight: bold; 
+    font-size: 1.6em;
+    font-family: 'Rubik', sans-serif;
+ }
+ 
+ #mainbodydivbody {
+    background-color:#ffffff ; 
+    height: 30em;
+     margin: 0 auto; 
+     border: .01em solid rgb(190, 190, 190);
+ }
+
+ #mainbodydivbodytablebody{
+    width: 100%; 
+    border-collapse: collapse;
+
+ }
+
+#mainbodydivbodytablebodyheaderrow{
+    border-bottom: .01em solid rgb(193, 193, 193);  
+    background-color:#eff1f4 ;
+    font-family: 'Rubik', sans-serif;
+    font-weight: normal;
+
+}
+
+
+#mainbodydivbodytablebodyheadersubjectcategory{
+    border-right:.01em solid rgb(193, 193, 193); 
+    width: 20%; 
+    font-size: 1.15em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+#mainbodydivbodytablebodyheadersubjecttopic{
+    border-right:.01em solid rgb(193, 193, 193); 
+    width: 20%; 
+    font-size: 1.15em;
+}
+#mainbodydivbodytablebodyheadersubjectdescription{
+    border-right:.01em solid rgb(193, 193, 193); 
+    width: 40%;
+    font-size: 1.15em;
+}
+#mainbodydivbodytablebodyheadersubjectupdated{
+    border-right:.01em solid rgb(193, 193, 193); 
+    width: 20%;
+    width: 2em;
+    font-size: 1.15em;
+}
+
+
+#description {
+   max-width: 50em; 
+   overflow: hidden;   
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   
+}
+
+td {
+   text-align: center;
+   border:.01em solid rgb(193, 193, 193); 
+   padding-top: .2em;
+   padding-bottom: .2em;
+   font-family: 'Rubik', sans-serif;
+}
+
+#Viewbutton {
+   height: 2.2em;
+   width: 8em;
+   color: white;
+   border-radius: 2em;
+   background-color: black;
+   margin-left: .6em;
+}

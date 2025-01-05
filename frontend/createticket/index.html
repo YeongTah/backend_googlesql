@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Shows all clothing and main navigation">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Nxgen KnowledgeBase Create Resolution</title>
+        <link href="./index.css" rel="stylesheet" />
+        <script src="index.js" type="text/javascript"></script>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        
+    </head>
+    <body id="container">
+        <header class="Title" id="Nxgen"> 
+            <a href="/index.html"><img src="/img/images.png" alt="" class="Logo"> </a>
+   
+            <ol class="TitleWord">
+                <li><a href="/createticket/index.html">Create Resolution</a></li>
+                <li>Contact Us</li>
+            </ol>
+        </header>
+
+        <div id="mainbodydiv">
+            <div id="mainbodydivheader">Create a New Ticket</div>
+            
+            <div id="mainbodydivbody">
+                <form action="#" method="POST" class="ticket-form">
+                    
+                    <!-- Category Dropdown -->
+                    <label for="category">Select Category:</label>
+                    <select id="category" name="category">
+                        <option value="vpn">VPN</option>
+                        <option value="software">Internet</option>
+                        <option value="hardware">Printer</option>
+                        <option value="other">Other</option>
+                    </select>
+                    
+                    <!-- Topic Input -->
+                    <label for="topic">Topic:</label>
+                    <input type="text" id="topic" name="topic" placeholder="Enter the topic" required>
+                    
+                    <!-- Description Textarea -->
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" placeholder="Describe the issue in detail..." rows="6" required></textarea>
+                    
+                    <!-- Input for "Other" Category -->
+                    <div id="other-category-input" style="display: none;">
+                        <label for="other-description">Please specify the category:</label>
+                        <input type="text" id="other-description" name="other-description" placeholder="Enter category" />
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit">Submit Ticket</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

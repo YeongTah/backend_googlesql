@@ -1,0 +1,149 @@
+/* General Reset */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* Body and container styling */
+body {
+   background-color: #f7f7f7; /* Light grey background for the body */
+   font-family: 'Rubik', sans-serif;
+   color: #333; /* Dark text color for better readability */
+}
+
+/* Header Styling */
+header {
+   background-color: #ffffff;
+   position: fixed;  /* Make header fixed */
+   top: 0;
+   width: 100%;
+   padding: 15px 0;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the header */
+   z-index: 1000;
+}
+
+.Title {
+   display: flex;  /* Use Flexbox layout */
+   align-items: center;  /* Vertically align items to the center */
+   font-family: 'Rubik', sans-serif;
+}
+
+.Logo {
+   width: 100px;
+   height: auto;
+   left: 2em;
+}
+
+.TitleWord {
+   font-size: .6em;          /* Adjust font size */
+   color: rgb(0, 0, 0);               /* Change text color */
+   margin-left: auto;         /* Space between image and text */
+}
+
+/* Main body container */
+#mainbodydiv {
+   width: 40%;
+   margin: 7em auto; /* Adjusted padding-top to accommodate the fixed header */
+   padding: 30px;
+   background-color: #ffffff;
+   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Add box-shadow to the main container */
+   border-radius: 8px; /* Rounded corners for the container */
+}
+
+/* Header for the form section */
+#mainbodydivheader {
+   font-weight: bold;
+   font-size: 2em;
+   color: #333;
+   margin-bottom: 20px;
+}
+
+/* Body of the form */
+#mainbodydivbody {
+   background-color: #ffffff;
+   padding: 30px;
+   border-radius: 8px;
+}
+
+/* Form Styling */
+.ticket-form label {
+   display: block;
+   font-size: 1.1em;
+   margin-bottom: 8px;
+   color: #555;
+}
+
+.ticket-form input, .ticket-form select, .ticket-form textarea {
+   width: 100%;
+   padding: 12px;
+   margin-bottom: 20px;
+   border: 1px solid #ccc;
+   border-radius: 6px;
+   font-size: 1.1em;
+   transition: border-color 0.3s ease-in-out;
+}
+
+.ticket-form input:focus, .ticket-form select:focus, .ticket-form textarea:focus {
+   border-color: #4CAF50; /* Green focus border color */
+   outline: none;
+}
+
+/* Submit Button */
+.ticket-form button {
+   background-color: #4CAF50;
+   color: white;
+   border: none;
+   padding: 14px 20px;
+   font-size: 1.2em;
+   cursor: pointer;
+   border-radius: 6px;
+   width: 100%;
+   transition: background-color 0.3s ease-in-out;
+}
+
+.ticket-form button:hover {
+   background-color: #45a049;
+}
+
+/* Description styling */
+#description {
+   max-width: 100%;
+   height: auto;
+   padding: 10px;
+   resize: vertical;
+   border: 1px solid #ccc;
+   border-radius: 6px;
+   transition: border-color 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   #mainbodydiv {
+       width: 90%;
+   }
+
+   .ticket-form label {
+       font-size: 1em;
+   }
+
+   .ticket-form input, .ticket-form select, .ticket-form textarea {
+       font-size: 1em;
+   }
+
+   .ticket-form button {
+       font-size: 1em;
+   }
+   
+} ol {
+   display: flex;             /* Apply Flexbox to the ordered list */
+   flex-direction: row;       /* Ensure the items are arranged horizontally */
+   padding: 0;                /* Remove default padding from ol */
+}
+
+li {
+   margin-right: 20px;        /* Add some space between items */
+   list-style-type: decimal;  /* Optional: Add the number style back */
+   font-size: 1.2em;          /* Optional: Adjust font size */
+   list-style-type: none;
+}
