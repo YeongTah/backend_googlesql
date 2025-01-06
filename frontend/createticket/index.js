@@ -23,12 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
       event.preventDefault(); // Prevent default form submission
 
       // Gather form data
-      const category = document.getElementById('category').value;
+      let category = document.getElementById('category').value;
       const topic = document.getElementById('topic').value;
       const description = document.getElementById('description').value;
       let otherDescription = '';
+      console.log("This is cat" + category)
       if (category === 'other') {
           category = document.getElementById('other-description').value;
+          console.log("APENI" + category )
       }
 
       // Prepare data to be sent in the POST request
