@@ -14,7 +14,7 @@
 }
 
 body {
-    background-color: #eeeeee84  ;
+    background-color: #ffffff  ;
 }
 
 /* Header Styling */
@@ -47,8 +47,13 @@ header {
     font-size: .6em;          /* Adjust font size */
     color: rgb(0, 0, 0);               /* Change text color */
     margin-left: auto;         /* Space between image and text */
+   
  }
  
+ #CreateTix {
+   text-decoration: none; 
+   color: black;
+ }
  ol {
     display: flex;             /* Apply Flexbox to the ordered list */
     flex-direction: row;       /* Ensure the items are arranged horizontally */
@@ -67,25 +72,31 @@ header {
     width: 80%;  
     margin: 0 auto; 
     padding-top: 10em;
+    margin-bottom: 2em;
+ 
  }
  
 
  #mainbodydivheader {
     font-weight: bold; 
-    font-size: 1.6em;
+    font-size: 2em;
     font-family: 'Rubik', sans-serif;
+    text-align: center;
+    padding-bottom: 2em;
  }
  
  #mainbodydivbody {
-    background-color:#ffffff ; 
+    background-color:#ffffff84 ; 
     height: 30em;
      margin: 0 auto; 
      border: .01em solid rgb(190, 190, 190);
+     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
  }
 
  #mainbodydivbodytablebody{
     width: 100%; 
     border-collapse: collapse;
+    
 
  }
 
@@ -146,4 +157,19 @@ td {
    border-radius: 2em;
    background-color: black;
    margin-left: .6em;
+}
+
+
+footer {
+   text-align: center;  /* Center the text */
+   margin-top: 40px;    /* Add some space above */
+   font-size: 1em;      /* Adjust font size */
+   color: #333;         /* Dark text color */
+   padding: 20px 0;     /* Padding around the footer */
+   background-color: #ffffff; /* Light background color */
+   font-family: 'Rubik', sans-serif;
+}
+.trademark {
+   font-style: italic;  /* Italicize the text */
+   color: #666;         /* Lighter text color */
 }

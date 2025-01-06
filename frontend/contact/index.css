@@ -39,6 +39,7 @@ header {
    font-size: .6em;          /* Adjust font size */
    color: rgb(0, 0, 0);               /* Change text color */
    margin-left: auto;         /* Space between image and text */
+   margin-right: 1em;
 }
 
 #CreateTix {
@@ -153,6 +154,36 @@ li {
    list-style-type: none;
 }
 
+.contact-info li {
+   display: flex;              /* Use Flexbox for proper alignment */
+   align-items: center;        /* Vertically center the items */
+   margin-bottom: 10px;        /* Space between items */
+   font-size: 1.2em;           /* Optional: Adjust font size */
+}
+.contact-info{
+   padding-top: 2em;
+}
+.contact-info i {
+   margin-right: 10px;         /* Space between icon and text */
+   font-size: 1.4em;           /* Adjust the size of the icon */
+}
+
+#officialsite {
+   text-decoration: none;
+   color: black;
+}
+
+#officialsite:hover {
+   text-decoration: underline;
+   color: black;
+}
+
+#maps {
+   margin-top: 20px;
+   width: 100%;
+  
+}
+
 footer {
    text-align: center;  /* Center the text */
    margin-top: 40px;    /* Add some space above */
@@ -161,7 +192,38 @@ footer {
    padding: 20px 0;     /* Padding around the footer */
    background-color: #f7f7f7; /* Light background color */
 }
+
 .trademark {
    font-style: italic;  /* Italicize the text */
    color: #666;         /* Lighter text color */
+}
+
+
+#working-hours {
+   margin-top: 40px;
+   padding: 20px;
+   background-color: #ffffff; /* White background for the working hours section */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect for emphasis */
+   border-radius: 8px;
+}
+
+#working-hours h3 {
+   font-size: 1.8em;
+   color: #333;
+   margin-bottom: 15px;
+}
+
+#working-hours ul {
+   list-style: none;
+   padding: 0;
+}
+
+#working-hours li {
+   font-size: 1.2em;
+   color: #555;
+   margin-bottom: 10px;
+}
+
+#working-hours li strong {
+   color: #333;
 }
