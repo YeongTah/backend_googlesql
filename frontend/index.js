@@ -19,28 +19,35 @@ document.addEventListener('DOMContentLoaded', function(){
         const tableheaddescriptionbody = document.createElement('td')
         const tableheaddescription = document.createElement('div')
         const tableheadlastupdated = document.createElement('td')
+        const tableheadlastupdatedButtonIcon =  document.createElement('i')
         const tableheadlastupdatedButton = document.createElement('button')
+        const tableheaddeletebutton = document.createElement('i')
         tableheadlastupdatedButton.id = "Viewbutton"
         tableheadlastupdatedButton.type = "button"
-        tableheadlastupdatedButton.textContent = "View more"
-        
-        tablerow.classList = `mainbodydivbodytablebody${data[i].ID}`
+        tableheadlastupdatedButtonIcon.id = "Viewbutton"
+        tableheaddeletebutton.id = "Delbutton"
+        tablerow.classList = `mainbodydivbodytablebody${data[i].Resolution_ID}`
         tablerow.id = 'mainbodydivbodytablebodychild'
         tableheaddescription.id = "description"
         tableheaddescription.textContent = data[i].Description
         tableheadcategory.textContent = data[i].Category
         tableheadtopic.textContent = data[i].Topic
         tableheadlastupdated.textContent = data[i].Lastupdated.slice(0, 10)
-        tableheadlastupdated.appendChild(tableheadlastupdatedButton)
+        tableheadlastupdatedButtonIcon.classList.add('fa', 'fa-plus' , 'fa-lg')
+        tableheaddeletebutton.classList.add('fa','fa-trash-o' , 'fa-lg')
+
+
+        tableheadlastupdatedButton.appendChild(tableheadlastupdatedButtonIcon)
+        tableheadlastupdated.appendChild(tableheadlastupdatedButtonIcon)
         tableheaddescriptionbody.appendChild(tableheaddescription)
         tablerow.appendChild(tableheadcategory)
         tablerow.appendChild(tableheadtopic)
         tablerow.appendChild(tableheaddescriptionbody)
         tablerow.appendChild(tableheadlastupdated)
 
-        container.appendChild(tablerow)
+     
 
-        tableheadlastupdatedButton.addEventListener('click', function() {
+        tableheadlastupdatedButtonIcon.addEventListener('click', function() {
 
           if(tableheadlastupdatedButton.textContent == "close"){
 
@@ -49,17 +56,53 @@ document.addEventListener('DOMContentLoaded', function(){
             tableheaddescription.style.textOverflow = 'ellipsis';
             tableheaddescription.style.whiteSpace = 'nowrap';
             tableheadlastupdatedButton.textContent = 'View more';
+            tableheaddeletebutton.style.display = 'none';
           }else {
             tableheaddescription.style.height = "10em"
             tableheaddescription.style.overflow = "visible"
             tableheaddescription.style.textOverflow = 'clip';
             tableheaddescription.style.whiteSpace = 'normal'
             tableheadlastupdatedButton.textContent = 'close'
+            tableheaddeletebutton.style.display = '';
+            tableheadlastupdated.appendChild(tableheaddeletebutton)
           }
 
         })
 
+        tableheaddeletebutton.addEventListener('click', function() {
+
+          const response = confirm('Do you want to proceed to delete?')
+          if (response) {
+
+         
+             
+             const resolutionId = data[i].Resolution_ID
+             console.log("this is ID"+resolutionId)
+             const url = `http://localhost:3000/delete-ticket/${resolutionId}`;
+
+            fetch(url, {
+              method: 'DELETE'
+            }).then(body => {
+
+              if(!body.ok){
+                throw new Error(`Failed to delete Resolution ID ${resolutionId}: ${fetchResponse.statusText}`);
+              }
+              return body.json(); // Parse the response, if it's JSON
+
+            }).then(deletedData => {
+              console.log(`Resolution ID ${resolutionId} deleted successfully.`);
+              console.log('API Response:', deletedData);
+          }) .catch(error => {
+            console.error(`Error deleting Resolution ID ${resolutionId}:`, error);
+        });
+        alert('Deleted successfully')
+        window.location.reload();
         
+          } else {
+            
+          }
+        })
+        container.appendChild(tablerow)
        /*  const Category = document.createElement('p')
         Category.id = "Category"
         Category.textContent = data[i].Category

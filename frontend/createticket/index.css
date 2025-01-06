@@ -44,6 +44,7 @@ header {
 #CreateTix {
    text-decoration: none; 
    color: black;
+   font-size: 1.2em;
  }
  
 /* Main body container */

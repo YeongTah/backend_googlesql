@@ -31,3 +31,20 @@ module.exports.createnewticket = function createnewticket(category, topic, descr
     });
   });
 }
+
+module.exports.deleteticket = function deleteticket(Resolution_ID) {
+  return new Promise((resolve, reject) => {
+    const data = [Resolution_ID]
+    console.log('this is the data'+ data)
+    db.query(
+      `delete from resolution_table where Resolution_ID = ?`
+, data ,(err, results) => {
+      if (err) {
+        console.error('Error executing query:', err.message);
+        return reject(err); // Reject the promise if there is an error
+      }
+      console.log('Query results:', results);
+      resolve(results); // Resolve the promise with the query results
+    });
+  });
+}

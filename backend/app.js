@@ -54,7 +54,29 @@ app.post('/create-ticket', async (req, res) => {
   }
 });
 
+app.delete('/delete-ticket/:id', async (req, res) => {
+  console.log("I'm in the route to delete a ticket at app.js and this is ID " + req.params.id);
 
+  try {
+    // Extract the data from the request body
+    const  Resolution_ID  = req.params.id;
+
+    // Log the received data
+    console.log('Received ticket data:', { Resolution_ID });
+
+    // Call the createnewticket function to insert the new ticket into the database
+    const result = await getHardwareData.deleteticket(Resolution_ID);
+
+    // Respond back with the new ticket data as a JSON response
+    res.status(201).json({
+      message: "Ticket deleted successfully",
+      ticket: result // Respond with the result (new ticket data from the database)
+    });
+  } catch (err) {
+    console.error('Error deleted ticket:', err);
+    res.status(500).send('Error deleted ticket');  // Handle error
+  }
+});
 
 
 

@@ -54,5 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(function(error) {
           console.error("Error submitting the form:", error);
       });
+
+      alert("Resolution Created")
+      window.location.reload()
   });
 });

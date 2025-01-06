@@ -53,6 +53,7 @@ header {
  #CreateTix {
    text-decoration: none; 
    color: black;
+   font-size: 1.2em;
  }
  ol {
     display: flex;             /* Apply Flexbox to the ordered list */
@@ -87,7 +88,7 @@ header {
  
  #mainbodydivbody {
     background-color:#ffffff84 ; 
-    height: 30em;
+    min-height: 30em;
      margin: 0 auto; 
      border: .01em solid rgb(190, 190, 190);
      box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
@@ -151,15 +152,19 @@ td {
 }
 
 #Viewbutton {
-   height: 2.2em;
-   width: 8em;
-   color: white;
    border-radius: 2em;
-   background-color: black;
-   margin-left: .6em;
+   margin-left: 1em;
+   color: gray;
+   
 }
 
 
+
+#Delbutton {
+   border-radius: 2em;
+   margin-left: 1em;
+   color: rgb(255, 0, 0);
+}
 footer {
    text-align: center;  /* Center the text */
    margin-top: 40px;    /* Add some space above */
